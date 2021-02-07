@@ -15,9 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = UINavigationController(rootViewController: CurrencyViewController())
+        let navigationController = UINavigationController(rootViewController: CurrenciesViewController())
+        navigationController.navigationBar.prefersLargeTitles = true
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 
 }
-
