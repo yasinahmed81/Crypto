@@ -7,7 +7,7 @@
 
 import UIKit
 
-// MARK: - Construction & Member Variables
+// MARK: - Initialisation
 
 final class CurrenciesViewController: UIViewController {
     
@@ -35,7 +35,7 @@ extension CurrenciesViewController {
         super.viewDidLoad()
         setupTableView()
         presenter.delegate = self
-        presenter.startProvidingData()
+        presenter.execute()
     }
     
     private func setupTableView() {
@@ -57,7 +57,7 @@ extension CurrenciesViewController: CurrenciesPresenterDelegate {
         self.title = title
     }
 
-    func currencies(_ presenter: CurrenciesPresenter, didProvide dataSource: CurrenciesDataSource) {
+    func currencies(_ presenter: CurrenciesPresenter, didProvide dataSource: UITableViewDataSource) {
         loadingView.isHidden.toggle()
         tableView.dataSource = dataSource
         tableView.reloadData()
@@ -65,7 +65,7 @@ extension CurrenciesViewController: CurrenciesPresenterDelegate {
 
     func currencies(_ presenter: CurrenciesPresenter, didProvide error: CustomStringConvertible, retryFetchingCurrencies: @escaping () -> Void) {
         loadingView.isHidden.toggle()
-        let retry = { [weak self] in
+        let retry = { [weak self, retryFetchingCurrencies] in
             self?.loadingView.isHidden.toggle()
             retryFetchingCurrencies()
         }

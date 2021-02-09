@@ -23,21 +23,21 @@ struct Coin: Decodable {
     let price: String
     let history: [String]
     
-    var pngUrl: URL? {
+    var pngURL: URL? {
         let url = iconUrl.replacingOccurrences(of: ".svg", with: ".png")
         return URL(string: url)
     }
     
-    var currentPriceFormatted: String {
+    var currentPrice: String {
         return format(price)
     }
     
-    var highestPriceFormatted: String {
+    var highestPrice: String {
         guard let highestPrice = history.compactMap({ Double($0) }).sorted().last else { return "" }
         return format(String(highestPrice))
     }
     
-    var lowestPriceFormatted: String {
+    var lowestPrice: String {
         guard let lowestPrice = history.compactMap({ Double($0) }).sorted().first else { return "" }
         return format(String(lowestPrice))
     }

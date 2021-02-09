@@ -35,10 +35,10 @@ final class CurrenciesTableViewCell: UITableViewCell {
     func configure(with coin: Coin) {
         coinNameLabel.text = coin.name
         coinSymbolLabel.text = coin.symbol
-        currentPriceLabel.text = coin.currentPriceFormatted
-        highestPriceLabel.text = coin.highestPriceFormatted
-        lowestPriceLabel.text = coin.lowestPriceFormatted
-        fetchCoinIcon(with: coin.pngUrl)
+        currentPriceLabel.text = coin.currentPrice
+        highestPriceLabel.text = coin.highestPrice
+        lowestPriceLabel.text = coin.lowestPrice
+        fetchCoinIcon(with: coin.pngURL)
     }
     
     private func setup() {

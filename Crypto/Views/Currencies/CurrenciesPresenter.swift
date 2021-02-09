@@ -10,20 +10,19 @@ import UIKit
 
 protocol CurrenciesPresenterDelegate: class {
     func currencies(_ presenter: CurrenciesPresenter, didProvide title: String)
-    func currencies(_ presenter: CurrenciesPresenter, didProvide dataSource: CurrenciesDataSource)
+    func currencies(_ presenter: CurrenciesPresenter, didProvide dataSource: UITableViewDataSource)
     func currencies(_ presenter: CurrenciesPresenter, didProvide error: CustomStringConvertible, retryFetchingCurrencies: @escaping () -> Void)
 }
 
-protocol CurrenciesPresentable: class {
+protocol CurrenciesPresentable: class, Executable {
     var delegate: CurrenciesPresenterDelegate? { get set }
-    func startProvidingData()
 }
 
 final class CurrenciesPresenter: CurrenciesPresentable {
     
     weak var delegate: CurrenciesPresenterDelegate?
     
-    private var dataSource: CurrenciesDataSource? {
+    private var dataSource: UITableViewDataSource? {
         didSet {
             guard let dataSource = dataSource else { return }
             delegate?.currencies(self, didProvide: dataSource)
@@ -36,7 +35,7 @@ final class CurrenciesPresenter: CurrenciesPresentable {
         self.networkService = networkService
     }
     
-    func startProvidingData() {
+    func execute() {
         provideTitle()
         fetchCurrencies()
     }

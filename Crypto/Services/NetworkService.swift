@@ -28,10 +28,6 @@ final class NetworkService: Resourcable {
         task.resume()
     }
     
-}
-
-extension NetworkService {
-    
     private func processCallback<Model: Decodable>(with data: Data?, response: URLResponse?, error: Error?, completion: @escaping (Result<Model, NetworkError>) -> Void) {
         
         if let error = error as? URLError {

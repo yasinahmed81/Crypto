@@ -13,7 +13,7 @@ protocol Resourcable {
     ///
     /// - Parameters:
     ///   - factory: Takes a `URLRequestFactory` type.
-    ///   - decodingModel: The `Decodable` model to use when decoding the `data` received from the endpoint.
+    ///   - decodingModel: The `Decodable` `Model` to use when decoding the `data` received from the endpoint.
     ///   - completion: Provides a `Result` type containing
     ///                 either a decoded `Model` or a `NetworkError`.
     func request<Model: Decodable>(_ factory: URLRequestFactory, decodingModel: Model.Type, completion: @escaping (Result<Model, NetworkError>) -> Void)

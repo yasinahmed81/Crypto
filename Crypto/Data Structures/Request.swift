@@ -27,7 +27,7 @@ extension Request: URLRequestFactory {
         return request
     }
     
-    var cryptoCurrenciesURL: URL {
+    private var cryptoCurrenciesURL: URL {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "api.coinranking.com"

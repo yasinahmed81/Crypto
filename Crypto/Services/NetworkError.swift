@@ -21,7 +21,7 @@ extension NetworkError: CustomStringConvertible {
     var description: String {
         switch self {
         case .urlError(let error):
-            return "There was an error in the network request.\nReason: \(error.localizedDescription)."
+            return "There was an error in the network request.\nReason: \(error.localizedDescription)"
         case .noResponseReceived:
             return "There was no response received from the network request."
         case .noDataReceived:
