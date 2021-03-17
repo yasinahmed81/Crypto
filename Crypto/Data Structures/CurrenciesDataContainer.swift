@@ -21,7 +21,7 @@ struct Coin: Decodable {
     let name: String
     let iconUrl: String
     let price: String
-    let history: [String]
+    let history: [String?]
     
     var pngURL: URL? {
         let url = iconUrl.replacingOccurrences(of: ".svg", with: ".png")
@@ -33,13 +33,17 @@ struct Coin: Decodable {
     }
     
     var highestPrice: String {
-        guard let highestPrice = history.compactMap({ Double($0) }).sorted().last else { return "" }
+        guard let highestPrice = sortedHistory.last else { return "" }
         return format(String(highestPrice))
     }
     
     var lowestPrice: String {
-        guard let lowestPrice = history.compactMap({ Double($0) }).sorted().first else { return "" }
+        guard let lowestPrice = sortedHistory.first else { return "" }
         return format(String(lowestPrice))
+    }
+    
+    private var sortedHistory: [Double] {
+        return history.compactMap({ Double($0 ?? "") }).sorted()
     }
     
     private func format(_ price: String) -> String {

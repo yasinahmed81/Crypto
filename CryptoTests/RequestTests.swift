@@ -10,11 +10,11 @@ import XCTest
 
 final class RequestTests: XCTestCase {
     
-    var request: URLRequestFactory!
+    var request: URLRequest!
 
     override func setUp() {
         super.setUp()
-        request = Request.cryptoCurrencies
+        request = Request.cryptoCurrencies.makeRequest
     }
     
     override func tearDown() {
@@ -23,8 +23,8 @@ final class RequestTests: XCTestCase {
     }
     
     func test_requestURL_isNotNil() {
-        XCTAssertNotNil(request.makeRequest.url)
-        XCTAssertEqual(request.makeRequest.url, URL(string: "https://api.coinranking.com/v1/public/coins?base=GBP&timePeriod=24h"))
+        XCTAssertNotNil(request.url)
+        XCTAssertEqual(request.url, URL(string: "https://api.coinranking.com/v1/public/coins?base=GBP&timePeriod=24h"))
     }
     
 }
