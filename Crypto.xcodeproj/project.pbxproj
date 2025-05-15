@@ -122,13 +122,20 @@
 			path = Feature;
 			sourceTree = "<group>";
 		};
-		415909C125CEDC9500B34803 /* Services */ = {
+		412ACF552DD6911C00C9C9C0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		415909C125CEDC9500B34803 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				415909C225CEDD0000B34803 /* NetworkService.swift */,
 				415909C625CEDD8600B34803 /* NetworkError.swift */,
 			);
-			path = Services;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		415909CC25CEDFF100B34803 /* Extensions */ = {
@@ -196,10 +203,11 @@
 		41D692CC25CEC4DE00422824 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				412ACF552DD6911C00C9C9C0 /* Repository */,
 				412ACF542DD690BB00C9C9C0 /* Feature */,
 				41D6932F25CED0DA00422824 /* App & Scene Delegates */,
 				41D6933E25CED1BF00422824 /* Data Structures */,
-				415909C125CEDC9500B34803 /* Services */,
+				415909C125CEDC9500B34803 /* Core */,
 				415909CC25CEDFF100B34803 /* Extensions */,
 				41D6932E25CED0C200422824 /* Protocols */,
 				41D6931D25CECDC800422824 /* Resources */,
