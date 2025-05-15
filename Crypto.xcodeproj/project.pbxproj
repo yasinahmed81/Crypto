@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -114,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		412ACF542DD690BB00C9C9C0 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				415909E925D017A700B34803 /* Currencies */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
 		415909C125CEDC9500B34803 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,8 +196,8 @@
 		41D692CC25CEC4DE00422824 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				412ACF542DD690BB00C9C9C0 /* Feature */,
 				41D6932F25CED0DA00422824 /* App & Scene Delegates */,
-				41D6932B25CED02500422824 /* Views */,
 				41D6933E25CED1BF00422824 /* Data Structures */,
 				415909C125CEDC9500B34803 /* Services */,
 				415909CC25CEDFF100B34803 /* Extensions */,
@@ -222,14 +230,6 @@
 				41D692DB25CEC4E900422824 /* Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		41D6932B25CED02500422824 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				415909E925D017A700B34803 /* Currencies */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		41D6932E25CED0C200422824 /* Protocols */ = {
