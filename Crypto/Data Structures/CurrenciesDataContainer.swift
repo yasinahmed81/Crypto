@@ -21,7 +21,7 @@ struct Coin: Decodable {
     let name: String
     let iconUrl: String
     let price: String
-    let history: [String?]
+    let sparkline: [String?]
     
     var pngURL: URL? {
         let url = iconUrl.replacingOccurrences(of: ".svg", with: ".png")
@@ -43,7 +43,7 @@ struct Coin: Decodable {
     }
     
     private var sortedHistory: [Double] {
-        return history.compactMap({ Double($0 ?? "") }).sorted()
+        return sparkline.compactMap({ Double($0 ?? "") }).sorted()
     }
     
     private func format(_ price: String) -> String {

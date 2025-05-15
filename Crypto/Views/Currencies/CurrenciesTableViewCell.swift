@@ -50,7 +50,7 @@ final class CurrenciesTableViewCell: UITableViewCell {
     
     private func fetchCoinIcon(with url: URL?) {
         guard let url = url else { return }
-        let resource = ImageResource(downloadURL: url)
+        let resource = Kingfisher.ImageResource(downloadURL: url)
         coinIconDownloadTask = coinImageView.kf.setImage(with: resource, placeholder: nil, options: [.transition(.fade(1))], progressBlock: nil) { _ in }
     }
     

@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-protocol CurrenciesPresenterDelegate: class {
+protocol CurrenciesPresenterDelegate: AnyObject {
     func currencies(_ presenter: CurrenciesPresenter, didProvide title: String)
     func currencies(_ presenter: CurrenciesPresenter, didProvide dataSource: UITableViewDataSource)
     func currencies(_ presenter: CurrenciesPresenter, didProvide error: CustomStringConvertible, retryFetchingCurrencies: @escaping () -> Void)
 }
 
-protocol CurrenciesPresentable: class, Executable {
+protocol CurrenciesPresentable: AnyObject, Executable {
     var delegate: CurrenciesPresenterDelegate? { get set }
 }
 
