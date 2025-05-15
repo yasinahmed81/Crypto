@@ -205,7 +205,7 @@
 			children = (
 				412ACF552DD6911C00C9C9C0 /* Repository */,
 				412ACF542DD690BB00C9C9C0 /* Feature */,
-				41D6932F25CED0DA00422824 /* App & Scene Delegates */,
+				41D6932F25CED0DA00422824 /* App */,
 				41D6933E25CED1BF00422824 /* Data Structures */,
 				415909C125CEDC9500B34803 /* Core */,
 				415909CC25CEDFF100B34803 /* Extensions */,
@@ -252,13 +252,13 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		41D6932F25CED0DA00422824 /* App & Scene Delegates */ = {
+		41D6932F25CED0DA00422824 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				41D692CD25CEC4DE00422824 /* AppDelegate.swift */,
 				41D692CF25CEC4DE00422824 /* SceneDelegate.swift */,
 			);
-			path = "App & Scene Delegates";
+			path = App;
 			sourceTree = "<group>";
 		};
 		41D6933E25CED1BF00422824 /* Data Structures */ = {
