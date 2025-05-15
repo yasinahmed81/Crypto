@@ -52,7 +52,7 @@ final class MockURLSession: URLSessionProtocol {
 
 extension MockURLSession {
  
-    final class MockURLSessionDataTask: URLSessionDataTask {
+    final class MockURLSessionDataTask: URLSessionDataTask, @unchecked Sendable {
         
         private let closure: () -> Void
         

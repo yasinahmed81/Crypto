@@ -24,7 +24,7 @@ final class RequestTests: XCTestCase {
     
     func test_requestURL_isNotNil() {
         XCTAssertNotNil(request.url)
-        XCTAssertEqual(request.url, URL(string: "https://api.coinranking.com/v1/public/coins?base=GBP&timePeriod=24h"))
+        XCTAssertEqual(request.url, URL(string: "https://api.coinranking.com/v2/coins?base=GBP&timePeriod=24h"))
     }
     
 }
