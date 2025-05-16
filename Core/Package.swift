@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "Core",
+    platforms: [
+        .iOS(.v15)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -18,7 +21,11 @@ let package = Package(
             name: "Core"),
         .testTarget(
             name: "CoreTests",
-            dependencies: ["Core"]
+            dependencies: ["Core"],
+            resources: [
+                .process("MockJSON/ValidData.json"),
+                .process("MockJSON/CorruptData.json")
+            ]
         ),
     ]
 )

@@ -10,7 +10,6 @@ import Foundation
 final class HttpClient: Resourcable {
     private let session: URLSessionProtocol
     
-    @available(iOS 15.0, *)
     init(session: URLSessionProtocol = URLSession.configured) {
         self.session = session
     }
@@ -30,10 +29,8 @@ final class HttpClient: Resourcable {
             case 200 ..< 300:
                 do {
                     return try Model.decode(from: data)
-                } catch let error as DecodingError {
-                    throw HttpClientError.decodingFailure(error)
                 } catch {
-                    throw HttpClientError.unknownError(error)
+                    throw HttpClientError.decodingFailure(error)
                 }
             default:
                 throw HttpClientError.unexpectedStatusCodeReceived(response.statusCode)
@@ -41,6 +38,10 @@ final class HttpClient: Resourcable {
         } catch {
             if let error = error as? URLError {
                 throw HttpClientError.urlError(error)
+            }
+            
+            if let error = error as? HttpClientError {
+                throw error
             }
             
             throw HttpClientError.unknownError(error)

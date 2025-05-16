@@ -11,7 +11,7 @@ enum HttpClientError: Error {
     case urlError(URLError)
     case unknownError(Error)
     case unexpectedURLResponse
-    case decodingFailure(DecodingError)
+    case decodingFailure(Error)
     case unexpectedStatusCodeReceived(Int)
 }
 

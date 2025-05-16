@@ -15,5 +15,4 @@ public protocol URLSessionProtocol {
     ) async throws -> (Data, URLResponse)
 }
 
-@available(iOS 15.0, *)
 extension URLSession: URLSessionProtocol { }
