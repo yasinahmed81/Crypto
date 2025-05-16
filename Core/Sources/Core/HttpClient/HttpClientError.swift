@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HttpClientError: Error {
+public enum HttpClientError: Error {
     case urlError(URLError)
     case unknownError(Error)
     case unexpectedURLResponse
@@ -16,7 +16,7 @@ enum HttpClientError: Error {
 }
 
 extension HttpClientError: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         switch self {
         case .urlError(let error):
             return "There was an error in the network request.\nReason: \(error.localizedDescription)"

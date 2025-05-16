@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol URLRequestFactoryMethod {
+public protocol URLRequestFactoryMethod {
     var makeRequest: URLRequest { get }
 }

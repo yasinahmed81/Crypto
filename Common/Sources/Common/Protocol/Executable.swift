@@ -7,5 +7,5 @@
 
 public protocol Executable<Output> {
     associatedtype Output
-    func execute() -> Output
+    func execute() async throws -> Output
 }

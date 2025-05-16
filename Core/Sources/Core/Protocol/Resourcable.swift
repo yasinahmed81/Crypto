@@ -5,7 +5,7 @@
 //  Created by Yasin Ahmed on 16/05/2025.
 //
 
-protocol Resourcable {
+public protocol Resourcable {
     /// Makes a request to an endpoint and then provides a decoded `Model`
     ///
     /// - Parameters:
