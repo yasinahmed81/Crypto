@@ -7,14 +7,14 @@
 
 import Foundation
 
-final class HttpClient: Resourcable {
+public final class HttpClient: Resourcable {
     private let session: URLSessionProtocol
     
-    init(session: URLSessionProtocol = URLSession.configured) {
+    public init(session: URLSessionProtocol = URLSession.configured) {
         self.session = session
     }
     
-    func request<Model: Decodable>(
+    public func request<Model: Decodable>(
         _ factory: any URLRequestFactoryMethod,
         decodingModel: Model.Type
     ) async throws(HttpClientError) -> Model {

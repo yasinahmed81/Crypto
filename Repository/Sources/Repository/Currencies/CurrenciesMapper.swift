@@ -5,11 +5,14 @@
 //  Created by Yasin Ahmed on 16/05/2025.
 //
 
+import Common
 import Foundation
 
-final class CurrenciesMapper: Mapping {
+public final class CurrenciesMapper: Mapping {
+    
+    public init() {}
 
-    func map(_ input: CurrenciesDataContainer) -> CurrenciesEntityContainer {
+    public func map(_ input: CurrenciesDataContainer) -> CurrenciesEntityContainer {
         CurrenciesEntityContainer(
             status: input.status,
             data: CurrenciesEntity(

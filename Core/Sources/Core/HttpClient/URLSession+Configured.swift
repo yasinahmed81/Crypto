@@ -8,7 +8,7 @@
 import Foundation
 
 extension URLSession {
-    static var configured: URLSession {
+    public static var configured: URLSession {
         let configuration = URLSessionConfiguration.default
         configuration.waitsForConnectivity = false
         configuration.timeoutIntervalForRequest = 30

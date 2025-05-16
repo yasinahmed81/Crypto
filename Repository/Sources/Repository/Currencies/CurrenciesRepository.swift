@@ -13,8 +13,8 @@ public class CurrenciesRepository: Executable {
     let mapper: any Mapping<CurrenciesDataContainer, CurrenciesEntityContainer>
     
     public init(
-        service: Resourcable,
-        mapper: any Mapping<CurrenciesDataContainer, CurrenciesEntityContainer>
+        service: Resourcable = HttpClient(),
+        mapper: any Mapping<CurrenciesDataContainer, CurrenciesEntityContainer> = CurrenciesMapper()
     ) {
         self.service = service
         self.mapper = mapper
