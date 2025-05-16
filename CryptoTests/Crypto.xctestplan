@@ -18,16 +18,44 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:Core",
-        "identifier" : "CoreTests",
-        "name" : "CoreTests"
+        "containerPath" : "container:Crypto.xcodeproj",
+        "identifier" : "41D692DF25CEC4EA00422824",
+        "name" : "CryptoTests"
       }
     },
     {
       "target" : {
-        "containerPath" : "container:Crypto.xcodeproj",
-        "identifier" : "41D692DF25CEC4EA00422824",
-        "name" : "CryptoTests"
+        "containerPath" : "container:Repository",
+        "identifier" : "RepositoryTests",
+        "name" : "RepositoryTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:UseCase",
+        "identifier" : "UseCaseTests",
+        "name" : "UseCaseTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Feature",
+        "identifier" : "FeatureTests",
+        "name" : "FeatureTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Common",
+        "identifier" : "CommonTests",
+        "name" : "CommonTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Core",
+        "identifier" : "CoreTests",
+        "name" : "CoreTests"
       }
     }
   ],

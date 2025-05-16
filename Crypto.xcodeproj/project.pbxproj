@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		413424542DD77468000A576B /* Crypto.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 413424532DD77468000A576B /* Crypto.xctestplan */; };
 		415909BC25CEDC5200B34803 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415909BB25CEDC5200B34803 /* URLSessionProtocol.swift */; };
 		415909C325CEDD0000B34803 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415909C225CEDD0000B34803 /* NetworkService.swift */; };
 		415909C725CEDD8600B34803 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415909C625CEDD8600B34803 /* NetworkError.swift */; };
@@ -56,7 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		413424532DD77468000A576B /* Crypto.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Crypto.xctestplan; sourceTree = "<group>"; };
+		4115CDC92DD777D500DC41C8 /* Feature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Feature; sourceTree = "<group>"; };
+		4115CDCA2DD777E300DC41C8 /* Repository */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Repository; sourceTree = "<group>"; };
+		4115CDCB2DD777EC00DC41C8 /* UseCase */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UseCase; sourceTree = "<group>"; };
+		4115CDCC2DD777F300DC41C8 /* Common */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Common; sourceTree = "<group>"; };
 		415909BB25CEDC5200B34803 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		415909C225CEDD0000B34803 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		415909C625CEDD8600B34803 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -192,6 +194,10 @@
 				41D692E325CEC4EA00422824 /* CryptoTests */,
 				41D692CB25CEC4DE00422824 /* Products */,
 				417C582F2DD75BC7000C9B10 /* Core */,
+				4115CDC92DD777D500DC41C8 /* Feature */,
+				4115CDCA2DD777E300DC41C8 /* Repository */,
+				4115CDCB2DD777EC00DC41C8 /* UseCase */,
+				4115CDCC2DD777F300DC41C8 /* Common */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,7 +228,6 @@
 		41D692E325CEC4EA00422824 /* CryptoTests */ = {
 			isa = PBXGroup;
 			children = (
-				413424532DD77468000A576B /* Crypto.xctestplan */,
 				41AC934225D1D6C7007E925C /* NetworkServiceTests.swift */,
 				41AC935E25D31A42007E925C /* CurrenciesPresenterTests.swift */,
 				41AC933A25D1D18E007E925C /* CurrenciesDataSourceTests.swift */,
@@ -372,7 +377,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				413424542DD77468000A576B /* Crypto.xctestplan in Resources */,
 				41AC935525D315E9007E925C /* Coins.json in Resources */,
 				41AC934C25D31361007E925C /* CorruptData.json in Resources */,
 			);

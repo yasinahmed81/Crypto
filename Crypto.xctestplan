@@ -1,0 +1,59 @@
+{
+  "configurations" : [
+    {
+      "id" : "744E0E28-8269-4D71-B816-9F1D0AF2629B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Common",
+        "identifier" : "CommonTests",
+        "name" : "CommonTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Crypto.xcodeproj",
+        "identifier" : "41D692DF25CEC4EA00422824",
+        "name" : "CryptoTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:UseCase",
+        "identifier" : "UseCaseTests",
+        "name" : "UseCaseTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Repository",
+        "identifier" : "RepositoryTests",
+        "name" : "RepositoryTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Core",
+        "identifier" : "CoreTests",
+        "name" : "CoreTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Feature",
+        "identifier" : "FeatureTests",
+        "name" : "FeatureTests"
+      }
+    }
+  ],
+  "version" : 1
+}
