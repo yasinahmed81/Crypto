@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		413424542DD77468000A576B /* Crypto.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 413424532DD77468000A576B /* Crypto.xctestplan */; };
 		415909BC25CEDC5200B34803 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415909BB25CEDC5200B34803 /* URLSessionProtocol.swift */; };
 		415909C325CEDD0000B34803 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415909C225CEDD0000B34803 /* NetworkService.swift */; };
 		415909C725CEDD8600B34803 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415909C625CEDD8600B34803 /* NetworkError.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		413424532DD77468000A576B /* Crypto.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Crypto.xctestplan; sourceTree = "<group>"; };
 		415909BB25CEDC5200B34803 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		415909C225CEDD0000B34803 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		415909C625CEDD8600B34803 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		415909FB25D0240200B34803 /* CurrenciesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrenciesViewController.xib; sourceTree = "<group>"; };
 		41590A0625D027D400B34803 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		41590A0A25D052D600B34803 /* Crypto+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Crypto+UIView.swift"; sourceTree = "<group>"; };
+		417C582F2DD75BC7000C9B10 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		41AC932725D1CAE5007E925C /* Executable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Executable.swift; sourceTree = "<group>"; };
 		41AC933025D1CCF7007E925C /* MockCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoin.swift; sourceTree = "<group>"; };
 		41AC933625D1CFFE007E925C /* RequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
@@ -188,6 +191,7 @@
 				41D692CC25CEC4DE00422824 /* Crypto */,
 				41D692E325CEC4EA00422824 /* CryptoTests */,
 				41D692CB25CEC4DE00422824 /* Products */,
+				417C582F2DD75BC7000C9B10 /* Core */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,6 +222,7 @@
 		41D692E325CEC4EA00422824 /* CryptoTests */ = {
 			isa = PBXGroup;
 			children = (
+				413424532DD77468000A576B /* Crypto.xctestplan */,
 				41AC934225D1D6C7007E925C /* NetworkServiceTests.swift */,
 				41AC935E25D31A42007E925C /* CurrenciesPresenterTests.swift */,
 				41AC933A25D1D18E007E925C /* CurrenciesDataSourceTests.swift */,
@@ -367,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				413424542DD77468000A576B /* Crypto.xctestplan in Resources */,
 				41AC935525D315E9007E925C /* Coins.json in Resources */,
 				41AC934C25D31361007E925C /* CorruptData.json in Resources */,
 			);
