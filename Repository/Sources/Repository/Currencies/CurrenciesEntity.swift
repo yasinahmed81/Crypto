@@ -8,22 +8,22 @@
 import Foundation
 
 public struct CurrenciesEntityContainer {
-    let status: String
-    let data: CurrenciesEntity
+    public let status: String
+    public let data: CurrenciesEntity
 }
 
 public struct CurrenciesEntity {
-    let coins: [CoinEntity]
+    public let coins: [CoinEntity]
 }
 
 public struct CoinEntity {
-    let symbol: String
-    let name: String
-    let iconUrl: String
-    let price: String
-    let sparkline: [String?]
-    let pngURL: URL?
-    let currentPrice: String
-    let highestPrice: String
-    let lowestPrice: String
+    public let symbol: String
+    public let name: String
+    public let iconUrl: String
+    public let price: String
+    public let sparkline: [String?]
+    public let pngURL: URL?
+    public let currentPrice: String
+    public let highestPrice: String
+    public let lowestPrice: String
 }
