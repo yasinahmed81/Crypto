@@ -46,6 +46,7 @@ public final class CurrenciesViewModel {
         guard let dataSource = dataSource else { return }
         if searchText.isEmpty {
             delegate?.currencies(filteredDataSource: dataSource)
+            return
         }
         let filteredCoins = dataSource.coins.filter { coin in
             coin.name.lowercased().hasPrefix(searchText.lowercased())

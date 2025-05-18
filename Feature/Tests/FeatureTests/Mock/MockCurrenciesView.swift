@@ -16,6 +16,9 @@ final class MockCurrenciesView: CurrenciesViewModelDelegate {
     var dataSourceCount = 0
     var dataSource: ((UITableViewDataSource?) -> Void)?
     
+    var filteredDataSourceCount = 0
+    var filteredDataSource: ((UITableViewDataSource?) -> Void)?
+    
     var errorCount = 0
     var error: ((CustomStringConvertible) -> Void)?
     
@@ -27,6 +30,11 @@ final class MockCurrenciesView: CurrenciesViewModelDelegate {
     func currencies(dataSource: UITableViewDataSource) {
         dataSourceCount += 1
         self.dataSource?(dataSource)
+    }
+    
+    func currencies(filteredDataSource: UITableViewDataSource) {
+        filteredDataSourceCount += 1
+        self.filteredDataSource?(filteredDataSource)
     }
     
     func currencies(error: CustomStringConvertible) {

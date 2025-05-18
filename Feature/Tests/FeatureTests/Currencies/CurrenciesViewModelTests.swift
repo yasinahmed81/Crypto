@@ -47,6 +47,69 @@ final class CurrenciesViewModelTests: XCTestCase {
         await fulfillment(of: [expectation], timeout: 0.1)
     }
     
+    func test_viewModel_didProvideFilteredDataSource_whenSearchMatched() async {
+        let viewModel = CurrenciesViewModel(useCase: MockCurrenciesUseCase(condition: .success))
+        let mockView = MockCurrenciesView()
+        viewModel.delegate = mockView
+        
+        let expectation = expectation(description: "Matched filteredDataSource expectation")
+        
+        mockView.filteredDataSource = { dataSource in
+            XCTAssertNotNil(dataSource)
+            XCTAssertEqual(mockView.filteredDataSourceCount, 1)
+            expectation.fulfill()
+        }
+        XCTAssertEqual(mockView.filteredDataSourceCount, 0)
+        await viewModel.execute()
+        
+        viewModel.filter(searchText: "Bitcoin")
+        
+        await fulfillment(of: [expectation], timeout: 0.1)
+    }
+    
+    func test_viewModel_didProvideOriginalDataSource_whenSearchIsEmpty() async {
+        let viewModel = CurrenciesViewModel(useCase: MockCurrenciesUseCase(condition: .success))
+        let mockView = MockCurrenciesView()
+        viewModel.delegate = mockView
+        
+        let expectation = expectation(description: "SearchIsEmpty expectation")
+        
+        mockView.filteredDataSource = { dataSource in
+            XCTAssertNotNil(dataSource)
+            XCTAssertEqual(mockView.filteredDataSourceCount, 1)
+            expectation.fulfill()
+        }
+        XCTAssertEqual(mockView.filteredDataSourceCount, 0)
+        await viewModel.execute()
+        
+        viewModel.filter(searchText: "")
+        
+        await fulfillment(of: [expectation], timeout: 0.1)
+    }
+    
+    func test_viewModel_didProvideFilteredDataSource_whenSearchNotMatched() async {
+        let viewModel = CurrenciesViewModel(useCase: MockCurrenciesUseCase(condition: .success))
+        let mockView = MockCurrenciesView()
+        viewModel.delegate = mockView
+        
+        let expectation = expectation(description: "Unmatched filteredDataSource expectation")
+        
+        mockView.filteredDataSource = { dataSource in
+            XCTAssertNotNil(dataSource)
+            XCTAssertEqual(mockView.filteredDataSourceCount, 1)
+            if let dataSource = dataSource as? CurrenciesDataSource {
+                XCTAssertEqual(dataSource.coins.count, 0)
+                expectation.fulfill()
+            }
+        }
+        XCTAssertEqual(mockView.filteredDataSourceCount, 0)
+        await viewModel.execute()
+        
+        viewModel.filter(searchText: "SomeCoin")
+        
+        await fulfillment(of: [expectation], timeout: 0.1)
+    }
+    
     func test_viewModel_didProvideError() async {
         let viewModel = CurrenciesViewModel(useCase: MockCurrenciesUseCase(condition: .error))
         let mockView = MockCurrenciesView()
