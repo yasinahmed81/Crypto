@@ -18,7 +18,7 @@ public final class CurrenciesViewController: UIViewController {
     
     public init(viewModel: CurrenciesViewModel = CurrenciesViewModel()) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nil, bundle: Bundle.module)
     }
     
     required init?(coder: NSCoder) {
