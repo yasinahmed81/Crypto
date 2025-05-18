@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,7 +22,6 @@
 		415909FD25D0240200B34803 /* CurrenciesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 415909FB25D0240200B34803 /* CurrenciesViewController.xib */; };
 		41590A0725D027D400B34803 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41590A0625D027D400B34803 /* AlertPresentable.swift */; };
 		41590A0B25D052D600B34803 /* Crypto+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41590A0A25D052D600B34803 /* Crypto+UIView.swift */; };
-		41590A1025D05E2D00B34803 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 41590A0F25D05E2D00B34803 /* Kingfisher */; };
 		41AC932825D1CAE5007E925C /* Executable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC932725D1CAE5007E925C /* Executable.swift */; };
 		41AC933125D1CCF7007E925C /* MockCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC933025D1CCF7007E925C /* MockCoin.swift */; };
 		41AC933725D1CFFE007E925C /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AC933625D1CFFE007E925C /* RequestTests.swift */; };
@@ -42,6 +41,7 @@
 		41D6933725CED13500422824 /* Resourcable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6933625CED13500422824 /* Resourcable.swift */; };
 		41D6933B25CED18600422824 /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6933A25CED18600422824 /* URLRequestFactory.swift */; };
 		41D6934025CED1E600422824 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D6933F25CED1E600422824 /* Request.swift */; };
+		41F1681D2DD8E29B00D0FBB5 /* Feature in Frameworks */ = {isa = PBXBuildFile; productRef = 41F1681C2DD8E29B00D0FBB5 /* Feature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41590A1025D05E2D00B34803 /* Kingfisher in Frameworks */,
+				41F1681D2DD8E29B00D0FBB5 /* Feature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +297,7 @@
 			);
 			name = Crypto;
 			packageProductDependencies = (
-				41590A0F25D05E2D00B34803 /* Kingfisher */,
+				41F1681C2DD8E29B00D0FBB5 /* Feature */,
 			);
 			productName = Crypto;
 			productReference = 41D692CA25CEC4DE00422824 /* Crypto.app */;
@@ -349,7 +349,7 @@
 			);
 			mainGroup = 41D692C125CEC4DE00422824;
 			packageReferences = (
-				41590A0E25D05E2D00B34803 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				41F1681B2DD8E29B00D0FBB5 /* XCLocalSwiftPackageReference "Feature" */,
 			);
 			productRefGroup = 41D692CB25CEC4DE00422824 /* Products */;
 			projectDirPath = "";
@@ -573,7 +573,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Crypto/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,7 +594,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Crypto/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -683,22 +683,17 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		41590A0E25D05E2D00B34803 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.1.0;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		41F1681B2DD8E29B00D0FBB5 /* XCLocalSwiftPackageReference "Feature" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Feature;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		41590A0F25D05E2D00B34803 /* Kingfisher */ = {
+		41F1681C2DD8E29B00D0FBB5 /* Feature */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 41590A0E25D05E2D00B34803 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
+			productName = Feature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

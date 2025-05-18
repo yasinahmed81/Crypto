@@ -15,6 +15,7 @@ let package = Package(
             targets: ["Feature"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/onevcat/Kingfisher.git", from: "7.0.0"),
         .package(path: "../UseCase"),
         .package(path: "../Common")
     ],
@@ -24,6 +25,7 @@ let package = Package(
         .target(
             name: "Feature",
             dependencies: [
+                "Kingfisher",
                 "UseCase",
                 "Common"
             ]
