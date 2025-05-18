@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrenciesViewController" customModule="Feature">
             <connections>
                 <outlet property="loadingView" destination="FB2-fl-nhY" id="A5h-zg-mIG"/>
+                <outlet property="searchBar" destination="H8j-If-AJp" id="VK7-x2-nmd"/>
                 <outlet property="tableView" destination="SnZ-iV-Ene" id="75I-HG-gnH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,10 +22,13 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SnZ-iV-Ene">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                <searchBar contentMode="redraw" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8j-If-AJp">
+                    <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Z8m-FO-8tE"/>
+                    </connections>
+                </searchBar>
                 <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FB2-fl-nhY">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Q1w-c9-Uiw">
@@ -42,6 +46,10 @@
                     </view>
                     <blurEffect style="systemThinMaterialDark"/>
                 </visualEffectView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SnZ-iV-Ene">
+                    <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -49,13 +57,16 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SnZ-iV-Ene" secondAttribute="bottom" id="2s2-US-W0c"/>
                 <constraint firstItem="FB2-fl-nhY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2tf-8D-Ne1"/>
                 <constraint firstAttribute="bottom" secondItem="FB2-fl-nhY" secondAttribute="bottom" id="Hxw-sQ-FON"/>
-                <constraint firstItem="SnZ-iV-Ene" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="L58-W0-Nre"/>
                 <constraint firstItem="FB2-fl-nhY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="L8f-vd-DdX"/>
+                <constraint firstItem="SnZ-iV-Ene" firstAttribute="top" secondItem="H8j-If-AJp" secondAttribute="bottom" id="XsR-d4-N7K"/>
                 <constraint firstItem="SnZ-iV-Ene" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YEq-3V-W1a"/>
+                <constraint firstItem="H8j-If-AJp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fhl-ZA-ch8"/>
+                <constraint firstItem="H8j-If-AJp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="lqW-tI-EZV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SnZ-iV-Ene" secondAttribute="trailing" id="o2x-Gc-QFL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="H8j-If-AJp" secondAttribute="top" id="y4q-bD-4A8"/>
                 <constraint firstAttribute="trailing" secondItem="FB2-fl-nhY" secondAttribute="trailing" id="ywq-Kj-ON7"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="154"/>
+            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
         </view>
     </objects>
     <resources>

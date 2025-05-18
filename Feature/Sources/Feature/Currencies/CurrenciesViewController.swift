@@ -11,6 +11,7 @@ import UIKit
 
 public final class CurrenciesViewController: UIViewController {
     
+    @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var loadingView: UIVisualEffectView!
     
@@ -34,6 +35,7 @@ public extension CurrenciesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        searchBar.delegate = self
         viewModel.delegate = self
         fetchCoins()
     }
@@ -87,7 +89,19 @@ extension CurrenciesViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension CurrenciesViewController: UISearchBarDelegate {
     
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
+    
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
 
 extension CurrenciesViewController: AlertPresentable { }
