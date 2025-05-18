@@ -8,7 +8,7 @@
 import Repository
 import Common
 
-public class CurrenciesUseCase: Executable {
+public final class CurrenciesUseCase: Executable {
     let repository: any Executable<CurrenciesEntityContainer>
     let mapper: any Mapping<CurrenciesEntityContainer, CurrenciesViewState>
     

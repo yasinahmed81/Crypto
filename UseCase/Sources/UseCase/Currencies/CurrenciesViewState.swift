@@ -7,19 +7,19 @@
 
 import Foundation
 
-public struct CurrenciesViewState {
-    let status: String
-    let coins: [Coin]
+public struct CurrenciesViewState: Sendable {
+    public let status: String
+    public let coins: [Coin]
 }
 
-public struct Coin {
-    let symbol: String
-    let name: String
-    let iconUrl: String
-    let price: String
-    let sparkline: [String?]
-    let pngURL: URL?
-    let currentPrice: String
-    let highestPrice: String
-    let lowestPrice: String
+public struct Coin: Sendable {
+    public let symbol: String
+    public let name: String
+    public let iconUrl: String
+    public let price: String
+    public let sparkline: [String?]
+    public let pngURL: URL?
+    public let currentPrice: String
+    public let highestPrice: String
+    public let lowestPrice: String
 }

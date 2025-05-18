@@ -8,7 +8,7 @@
 import Core
 import Common
 
-public class CurrenciesRepository: Executable {
+public final class CurrenciesRepository: Executable {
     let service: Resourcable
     let mapper: any Mapping<CurrenciesDataContainer, CurrenciesEntityContainer>
     
