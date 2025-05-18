@@ -8,7 +8,7 @@
 import Foundation
 
 // Retroactive modelling to aid unit tests
-public protocol URLSessionProtocol {
+public protocol URLSessionProtocol: Sendable {
     func data(
         for request: URLRequest,
         delegate: (any URLSessionTaskDelegate)?
