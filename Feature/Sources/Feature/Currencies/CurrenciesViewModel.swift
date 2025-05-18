@@ -13,6 +13,7 @@ import UIKit
 protocol CurrenciesViewModelDelegate: AnyObject {
     func currencies(title: String)
     func currencies(dataSource: UITableViewDataSource)
+    func currencies(filteredDataSource: UITableViewDataSource)
     func currencies(error: CustomStringConvertible)
 }
 
@@ -21,7 +22,9 @@ public final class CurrenciesViewModel {
     
     weak var delegate: CurrenciesViewModelDelegate?
     
-    private var dataSource: UITableViewDataSource? {
+    private var filteredDataSource: CurrenciesDataSource?
+    
+    private var dataSource: CurrenciesDataSource? {
         didSet {
             guard let dataSource = dataSource else { return }
             delegate?.currencies(dataSource: dataSource)
@@ -37,6 +40,19 @@ public final class CurrenciesViewModel {
     func execute() async {
         provideTitle()
         await fetchCurrencies()
+    }
+    
+    func filter(searchText: String) {
+        guard let dataSource = dataSource else { return }
+        if searchText.isEmpty {
+            delegate?.currencies(filteredDataSource: dataSource)
+        }
+        let filteredCoins = dataSource.coins.filter { coin in
+            coin.name.lowercased().hasPrefix(searchText.lowercased())
+        }
+        self.filteredDataSource = CurrenciesDataSource(coins: filteredCoins)
+        guard let filteredDataSource = self.filteredDataSource else { return }
+        delegate?.currencies(filteredDataSource: filteredDataSource)
     }
     
     private func provideTitle() {

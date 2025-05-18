@@ -10,7 +10,7 @@ import UIKit
 
 final class CurrenciesDataSource: NSObject {
     
-    private let coins: [Coin]
+    let coins: [Coin]
     
     init(coins: [Coin]) {
         self.coins = coins

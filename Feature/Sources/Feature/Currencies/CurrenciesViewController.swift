@@ -69,6 +69,11 @@ extension CurrenciesViewController: @preconcurrency CurrenciesViewModelDelegate 
         tableView.dataSource = dataSource
         tableView.reloadData()
     }
+    
+    func currencies(filteredDataSource: UITableViewDataSource) {
+        tableView.dataSource = filteredDataSource
+        tableView.reloadData()
+    }
 
     func currencies(error: CustomStringConvertible) {
         loadingView.isHidden.toggle()
@@ -96,7 +101,7 @@ extension CurrenciesViewController: UITableViewDelegate {
 extension CurrenciesViewController: UISearchBarDelegate {
     
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        viewModel.filter(searchText: searchText)
     }
     
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
